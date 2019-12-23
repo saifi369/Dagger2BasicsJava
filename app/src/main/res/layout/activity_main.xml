@@ -23,7 +23,6 @@
         android:textSize="18sp"
         android:inputType="textShortMessage"
         android:visibility="gone" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"

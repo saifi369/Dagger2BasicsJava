@@ -8,13 +8,16 @@ import android.widget.TextView;
 import com.saifi369.dagger2basicsjava.basics.MainViewModel;
 import com.saifi369.dagger2basicsjava.di.DaggerMainViewModelInjector;
 
+import javax.inject.Inject;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.saifi369.dagger2basicsjava.basics.Constants.MY_TAG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainViewModel mMainViewModel;
+    @Inject
+    MainViewModel mMainViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView=findViewById(R.id.textView);
         Button button=findViewById(R.id.connect);
 
-        mMainViewModel = DaggerMainViewModelInjector.create().getMainViewModel();
+        DaggerMainViewModelInjector.create().injectFields(this);
 
         button.setOnClickListener(view -> {
             Log.d(MY_TAG, "onCreate: Data fetched");

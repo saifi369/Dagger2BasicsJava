@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 public class MainViewModel {
 
+    @Inject
     private final NetworkClient mClient;
 
     @Inject
