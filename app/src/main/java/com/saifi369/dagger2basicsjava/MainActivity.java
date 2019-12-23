@@ -6,8 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.saifi369.dagger2basicsjava.basics.MainViewModel;
-import com.saifi369.dagger2basicsjava.network.NetworkClient;
-import com.saifi369.dagger2basicsjava.network.NetworkConnection;
+import com.saifi369.dagger2basicsjava.di.DaggerMainViewModelInjector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,10 +24,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView=findViewById(R.id.textView);
         Button button=findViewById(R.id.connect);
 
-        NetworkConnection connection = new NetworkConnection();
-        NetworkClient client = new NetworkClient(connection);
-
-        mMainViewModel = new MainViewModel(client);
+        mMainViewModel = DaggerMainViewModelInjector.create().getMainViewModel();
 
         button.setOnClickListener(view -> {
             Log.d(MY_TAG, "onCreate: Data fetched");

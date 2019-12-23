@@ -3,9 +3,12 @@ package com.saifi369.dagger2basicsjava.network;
 import com.saifi369.dagger2basicsjava.BuildConfig;
 import com.saifi369.dagger2basicsjava.basics.Constants;
 
-public class NetworkConnection {
-    private String mEndpoint;
+import javax.inject.Inject;
 
+public class NetworkConnection {
+    private final String mEndpoint;
+
+    @Inject
     public NetworkConnection(){
 
         if(BuildConfig.DEBUG){

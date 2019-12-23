@@ -1,10 +1,13 @@
 package com.saifi369.dagger2basicsjava.network;
 
 
+import javax.inject.Inject;
+
 public class NetworkClient {
 
-    private NetworkConnection mConnection;
+    private final NetworkConnection mConnection;
 
+    @Inject
     public NetworkClient(NetworkConnection connection) {
         this.mConnection = connection;
     }
