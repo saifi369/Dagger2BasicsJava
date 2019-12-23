@@ -5,11 +5,11 @@ public class NetworkClient {
 
     private NetworkConnection mConnection;
 
-    public NetworkClient() {
-        this.mConnection =new NetworkConnection();
+    public NetworkClient(NetworkConnection connection) {
+        this.mConnection = connection;
     }
 
     public String fetchData(){
-        return this.mConnection.doReq();
+        return mConnection.doReq();
     }
 }

@@ -15,9 +15,9 @@ public class NetworkConnection {
         }
 
     }
-
     public String doReq() {
         return this.mEndpoint;
     }
+
 }
 

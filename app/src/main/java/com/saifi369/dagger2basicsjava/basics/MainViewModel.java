@@ -6,8 +6,8 @@ public class MainViewModel {
 
     private NetworkClient mClient;
 
-    public MainViewModel() {
-        this.mClient = new NetworkClient();
+    public MainViewModel(NetworkClient networkClient) {
+        this.mClient = networkClient;
     }
 
     public String fetchData(){
