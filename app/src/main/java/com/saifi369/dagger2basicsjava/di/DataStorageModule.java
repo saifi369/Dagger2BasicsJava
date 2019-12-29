@@ -10,12 +10,12 @@ import dagger.Provides;
 public class DataStorageModule {
 
     @Provides
-    public static Transaction getTransaction() {
+    public static Transaction provideTransaction() {
         return new Transaction(System.currentTimeMillis());
     }
 
     @Provides
-    public static DataStorageHelper getDataStorageHelper(Transaction transaction) {
+    public static DataStorageHelper provideDataStorageHelper(Transaction transaction) {
         DataStorageHelper helper = new DataStorageHelper(transaction);
         helper.setStoragePermission(true);
         return helper;
