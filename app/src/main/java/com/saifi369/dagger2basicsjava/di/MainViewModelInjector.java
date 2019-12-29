@@ -5,7 +5,7 @@ import com.saifi369.dagger2basicsjava.basics.MainViewModel;
 
 import dagger.Component;
 
-@Component
+@Component(modules = {DataStorageModule.class})
 public interface MainViewModelInjector {
 
     MainViewModel getMainViewModel();
