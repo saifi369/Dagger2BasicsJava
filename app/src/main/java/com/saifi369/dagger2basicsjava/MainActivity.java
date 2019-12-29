@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.saifi369.dagger2basicsjava.basics.Constants;
 import com.saifi369.dagger2basicsjava.basics.MainViewModel;
 import com.saifi369.dagger2basicsjava.di.DaggerMainViewModelInjector;
 
@@ -12,7 +13,7 @@ import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.saifi369.dagger2basicsjava.basics.Constants.MY_TAG;
+import static com.saifi369.dagger2basicsjava.basics.Constants.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,9 +31,15 @@ public class MainActivity extends AppCompatActivity {
         DaggerMainViewModelInjector.create().injectFields(this);
 
         button.setOnClickListener(view -> {
-            Log.d(MY_TAG, "onCreate: Data fetched");
+            Log.d(Constants.TAG, "onCreate: Data fetched");
             textView.setText(mMainViewModel.fetchData());
         });
 
     }
+
+    @Inject
+    public void testMethod() {
+        Log.d(TAG, "testMethod: this is test method from main activity");
+    }
+
 }

@@ -12,6 +12,11 @@ public class NetworkClient {
         this.mConnection = connection;
     }
 
+    @Inject
+    public void attachToNetworkTester(NetworkTester tester) {
+        tester.attachToNetwork(this);
+    }
+
     public String fetchData(){
         return mConnection.doReq();
     }
