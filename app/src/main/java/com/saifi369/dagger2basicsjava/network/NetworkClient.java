@@ -5,10 +5,10 @@ import javax.inject.Inject;
 
 public class NetworkClient {
 
-    private final NetworkConnection mConnection;
+    private final Connection mConnection;
 
     @Inject
-    public NetworkClient(NetworkConnection connection) {
+    public NetworkClient(Connection connection) {
         this.mConnection = connection;
     }
 
