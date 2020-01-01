@@ -7,7 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class DataStorageModule {
+public abstract class DataStorageModule {
 
     @Provides
     public static Transaction provideTransaction() {
