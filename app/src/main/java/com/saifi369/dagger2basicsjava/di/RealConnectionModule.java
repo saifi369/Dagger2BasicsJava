@@ -9,15 +9,20 @@ import dagger.Provides;
 @Module
 public class RealConnectionModule {
 
-    private String mEndPoint;
-
-    public RealConnectionModule(String mEndPoint) {
-        this.mEndPoint = mEndPoint;
-    }
+//    private String mEndPoint;
+//
+//    public RealConnectionModule(String mEndPoint) {
+//        this.mEndPoint = mEndPoint;
+//    }
+//
+//    @Provides
+//    String provideEndpoint(){
+//        return this.mEndPoint;
+//    }
 
     @Provides
-    Connection provideConnection() {
-        return new RealConnection(mEndPoint);
+    Connection provideConnection(RealConnection connection) {
+        return connection;
     }
 
 

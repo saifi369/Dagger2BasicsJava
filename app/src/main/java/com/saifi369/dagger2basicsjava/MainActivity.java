@@ -8,7 +8,6 @@ import android.widget.TextView;
 import com.saifi369.dagger2basicsjava.basics.Constants;
 import com.saifi369.dagger2basicsjava.basics.MainViewModel;
 import com.saifi369.dagger2basicsjava.di.DaggerMainViewModelInjector;
-import com.saifi369.dagger2basicsjava.di.RealConnectionModule;
 
 import javax.inject.Inject;
 
@@ -30,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         Button button=findViewById(R.id.connect);
 
         DaggerMainViewModelInjector.builder()
-                .realConnectionModule(new RealConnectionModule(Constants.PROD_ENDPOINT))
+                .setEndPoint(Constants.PROD_ENDPOINT)
                 .build()
                 .injectFields(this);
 
         button.setOnClickListener(view -> {
-            Log.d(Constants.TAG, "onCreate: Data fetched");
             textView.setText(mMainViewModel.fetchData());
+            Log.d(Constants.TAG, "onCreate: Data fetched");
         });
 
     }
