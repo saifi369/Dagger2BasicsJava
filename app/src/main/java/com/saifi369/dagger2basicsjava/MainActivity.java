@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         DaggerMainViewModelInjector.builder()
                 .setEndPoint(Constants.PROD_ENDPOINT)
+                .setUsername("admin")
+                .setPassword("adminpassword")
                 .build()
                 .injectFields(this);
 
